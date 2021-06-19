@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				height: 860px;
+				margin: 10px auto;
+			}
+			table{
+				width: 1000px;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			thead tr{
+				height: 34px;
+				width: 200px;
+				background-color: darkgray;
+				border: 0px;
+			}
+			td ,th{
+				border: #333 solid 1px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<table cellpadding="0">
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>科目</th>
+					<th>成绩</th>
+					<th>操作</th>
+				</tr>
+				
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		</div>
+		<script>
+			var datas=[{
+				name:'陈廷奇',
+				subject:'html5',
+				score:100
+			},
+			{
+				name:'陈奕迅',
+				subject:'html5',
+				score:98
+			},
+			{
+				name:'陈曦',
+				subject:'html5',
+				score:90
+			},
+			{
+				name:'陈冠希',
+				subject:'html5',
+				score:97
+			},];
+			//创建行 有几个人创建几行通过数组长度可以得到；
+			var tbody=document.querySelector('tbody');
+			for (var i=0;i<datas.length;i++){
+				var tr=document.createElement('tr');
+				tbody.appendChild(tr);
+				for (var k in datas[i]) {
+					var td=document.createElement('td');
+					td.innerHTML=datas[i][k];
+					tr.appendChild(td);
+				}
+				var td=document.createElement('td');
+				
+				tr.appendChild(td);
+				td.innerHTML='<a href="javascript:;">删除</a>';
+			}
+			var dele=document.querySelectorAll('a');
+			for (var i=0;i<dele.length;i++) {
+				dele[i].onclick=function(){
+					tbody.removeChild(this.parentNode.parentNode);
+				}
+			}
+			
+		</script>
+	</body>
+</html>

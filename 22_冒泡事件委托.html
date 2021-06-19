@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				height: 840px;
+				margin: 0 auto;
+				border: #0000FF solid 1px;
+				
+			}
+			.box li {
+				position: relative;
+				left:400px;
+			}
+			
+			.l{
+				background-color: pink;
+			}
+			.l1{
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"><ul>
+			<li class="">人生得意须尽欢</li>
+			<li>人生得意须尽欢</li>
+			<li>人生得意须尽欢</li>
+			<li>人生得意须尽欢</li>
+			<li>人生得意须尽欢</li>
+		</ul></div>
+		<script>
+			
+			//排他思想做
+			
+//			var lis=document.querySelectorAll('li');
+//			for(var i=0;i<lis.length;i++){
+//				lis[i].onclick=function(){
+//					
+//					 for (var i=0;i<lis.length;i++) {
+//					 	lis[i].className='';
+//					 }
+//					 this.className='l';
+//				}
+//			
+//			
+//			}
+
+//事件委托
+ var ullist=document.querySelector('ul');
+ ullist.addEventListener('click',function(e){
+ 	e.target.style.backgroundColor='pink';
+ })
+			 
+			
+		</script>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--//返回的是获取对象的集合 ，以伪数组的形式存储的。-->
+		<ul class="first">
+			<li>人生得意须尽欢1</li>
+			<li>人生得意须尽欢2</li>
+			<li>人生得意须尽欢3</li>
+			<li>人生得意须尽欢4</li>
+			<li>人生得意须尽欢5</li>
+		</ul>
+		<ul id="nav">
+			<li>莫使金樽空对月1</li>
+			<li>莫使金樽空对月2</li>
+			<li>莫使金樽空对月3</li>
+			<li>莫使金樽空对月4</li>
+			<li>莫使金樽空对月5</li>
+		</ul>
+		<script type="text/javascript">
+		var lis=document.getElementsByTagName('li')
+		console.log(lis);//所有的都打印
+		console.log(lis[0]);//打印第一个
+//		遍历所有的打印
+for ( var i=0;i<lis.length;i++) {
+	console.log(lis[i]);
+	
+}
+//Element.getElementsByTagName()获取元素里面的某些标签
+var nav=document.getElementById('nav');
+var navlist=nav.getElementsByTagName('li');
+console.log(navlist);
+//根据类名来获取
+var firstLisr=document.getElementsByClassName('first')
+console.log(firstLisr);
+//强大的类名的选择权  返回值是选择器的第一个元素对象
+var firstBox=document.querySelector('.first');
+console.log(firstBox);
+var idselector=document.querySelector('#nav');
+console.log(idselector);
+//querySelectorALL 选择输出所有的选择器值
+var arrbox=document.querySelectorAll('#nav')
+console.log(arrbox);
+var alllist=document.querySelectorAll('li');
+console.log(alllist);
+
+		</script>
+	</body>
+</html>

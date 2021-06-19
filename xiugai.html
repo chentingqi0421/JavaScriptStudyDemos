@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 500px;
+				height: 840px;
+				margin: 0 auto;
+				text-align: center;
+				background-color: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--点击按钮  div里面的文字发生变化-->
+		
+		<button>显示当前时间</button>
+		<div>某个时间</div>
+		<script>
+//			1.获取事件源
+var btn=document.querySelector('button');
+var div=document.querySelector('div');
+//2.编写事件
+btn.onclick=function(){
+	div.innerText =getData();
+}
+//测试使用当前时间
+function getData(){//编写获取时间的方法
+	var date=new Date();
+	var year=date.getFullYear();
+	var month=date.getMonth()+1;
+	var dates=date.getDate();
+	var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+	var day=date.getDay();
+	return'今天是:'+year+'年'+month+'月'+dates+'日'+arr[day];
+}
+		</script>
+	</body>
+	
+</html>

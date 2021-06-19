@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				
+				background: url(img/1.jpg) no-repeat center top;
+			}
+			ul li{
+				list-style: none;
+			}
+			.center {
+				overflow: hidden;
+				margin: 100px auto;
+				background-color: white;
+				width: 410px;
+				padding-top: 3px;
+			}
+			.center li{
+				float: left;
+				margin: 0 1px;
+				cursor: pointer;
+			}
+		 .center img{
+		 	width: 100px;
+		 }
+		</style>
+	</head>
+	<body>
+		<ul class="center">
+			<li>
+				<img src="img/1.jpg"/>
+			</li>
+			<li><img src="img/2.jpg"/></li>
+			<li><img src="img/3.jpg"/></li>
+			<li><img src="img/4.jpg"/></li>
+		</ul>
+		<script>
+			var imgs = document.querySelector('.center').querySelectorAll('img');
+			for (var i=0;i < imgs.length; i++) {
+				imgs[i].onclick = function() 
+				{
+//					console.log(this.src);
+					document.body.style.backgroundImage = 'url(' + this.src + ')';
+				}
+			}
+		</script>
+	</body>
+</html>

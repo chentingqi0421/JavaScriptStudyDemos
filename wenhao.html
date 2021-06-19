@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				height: 840px;
+				width:1000px;
+				margin: 0 auto;
+				
+			}
+			img{
+				width:500px;
+				height: 300px;
+				position: relative;
+				left: 250px;
+				top: 0px;
+			}
+			#font{
+				font-size: 40px;
+				text-align: center;
+				font-family:arial;
+				color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<img  src="img/morring.gif">
+		<div id="font">早上好</div>
+		</div>
+		<script>
+			var img=document.querySelector('img');
+			var div=document.getElementById('font');
+			var date=new Date;
+			var h=date.getHours();
+			console.log(h);
+			//判断时间
+			if (h<12) {
+				img.src="img/morring.gif"
+				
+			} else{
+				if(12<h&&h<18){
+					img.src="img/lunch.gif"
+					div.innerText="下午好";
+				}
+				else{
+					img.src="img/night.gif"
+					div.innerText="晚上好";
+				}
+				
+			}
+		</script>
+	</body>
+</html>

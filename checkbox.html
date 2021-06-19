@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title><style>
+			table{
+				width: 200px;
+				border: 1px #999999 solid;
+				margin: 100px auto;
+				text-align: center;
+				border-bottom: ;
+			}
+			table th{
+				background: #00BFFF;
+				height: 20px;
+				
+			}
+			table td{
+				border-bottom: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr >
+					<th><input type="checkbox" id="checkall"></th>
+					<th>商品</th>
+					<th>价格</th>
+				</tr>
+			</thead>
+			<tbody id="checkone">
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>苹果</td>
+					<td>005</td>
+				</tr>	<tr>
+					<td><input type="checkbox"></td>
+					<td>香蕉</td>
+					<td>006</td>
+				</tr>
+					<tr>
+					<td><input type="checkbox"></td>
+					<td>水蜜桃</td>
+					<td>007</td>
+				</tr>
+				</tr>
+					<tr>
+					<td><input type="checkbox"></td>
+					<td>奇异果</td>
+					<td>008</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var checkall=document.getElementById('checkall');
+			var checkone =document.getElementById('checkone').getElementsByTagName('input');
+			checkall.onclick=function(){
+				console.log(this.checked);
+				for(var i=0;i<checkone.length;i++){
+					checkone[i].checked=this.checked;
+				}
+			}
+			for(var i=0;i<checkone.length;i++){
+				checkone[i].onclick=function(){
+					var flag=true;
+					for (var i=0;i<checkone.length;i++) {
+						if(!checkone[i].checked){
+							flag=false;
+						}
+					}
+					checkall.checked=flag;
+				}
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="事件点击"/>
+		<div>人生得意须尽欢 ：测试事件选中</div>
+		<script>
+//			点击一个按钮 弹出对话框
+//		1.事件有三个组成部分，事件源，事件类型，事件处理程序 事件三要素
+//		（1）事件源 事件被触发对象 谁 按钮
+//		（2）事件类型 如何触发 比如按钮点击触发鼠标 （onclick)经过触发 键盘按下触发
+//		(3)事件处理程序通过一个函数赋值的方式完成
+var btn=document.getElementById('btn');
+btn.onclick=function(){
+	alert("人生得意须尽欢");
+}//点击触发 
+var div=document.querySelector('div');
+div.onclick=function(){
+	console.log("我被选中了");
+}
+		</script>
+	</body>
+</html>

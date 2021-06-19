@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.text{
+				border: 1px solid black;
+				width: 200px;
+				height: 30px;
+				display: none;
+				
+			}
+			.box input{
+				margin-top: 20px;
+			}
+			.text::before{
+				content:'';
+				
+				width: 10px;
+				position: absolute;
+				left: 18px;
+				top: 40px;
+				border: 8px solid black;
+				border-style: solid dotted dotted;   
+				border-color: black transparent transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="text">123</div>
+			<input type="text" placeholder="请输入内容" class="check"/>
+		</div>
+		<script>
+			var text=document.querySelector('.text');
+			var inpt=document.querySelector('.check')
+			inpt.addEventListener('keyup',function(e){
+				text.style.display='block';
+				text.innerText=this.value;
+			})
+			inpt.addEventListener('blur',function(){
+				text.style.display='none';
+			})
+			inpt.addEventListener('focus',function(){
+				if(this.value!==''){
+					text.style.display='block';
+				}
+			})
+		</script>
+	</body>
+</html>

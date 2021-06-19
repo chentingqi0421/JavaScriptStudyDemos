@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				width: 24px;
+				height: 24px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/纸扇.png">
+		<script>
+			var img=document.querySelector('img');
+			document.addEventListener('mousemove',function(e){
+				var x=e.pageX;
+				var y=e.pageY;
+				img.style.left=x+-8+'px';
+				img.style.top=y+-10+'px';
+			})
+		</script>
+	</body>
+</html>

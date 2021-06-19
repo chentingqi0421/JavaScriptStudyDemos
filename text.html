@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background-image: linear-gradient(to right,pink,white);
+				
+			}
+			img{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 40px;
+				height: 40px;
+			}
+			.box{
+				width: 1000px;
+				height: 640px;
+				margin: 100px auto;
+				border: 2px solid deeppink;
+				text-align: center;
+				
+			}
+			h1{
+				color: darkblue;
+			}
+			hr{
+				color: deeppink;
+				border: 2px solid;
+			}
+			table{
+				width: 600px;
+				height: 200px;
+				border: 2px solid deeppink;
+				position: relative;
+				top: 60px;
+				left: 200px;
+				outline: none;
+			}
+			tr td{
+				border: 0px ;
+			}
+			.tbn1{
+				width: 100px;
+				height: 50px;
+				position: relative;
+				background-color:rgba(255,193,193,0.3);
+				top: 90px;
+			}
+			.pw{
+				width: 48px;
+				height: 48px;
+				background-image: url(img/open.png);
+				margin: 20px auto;
+			}
+			
+			.message1 ,.message2 ,.message3 ,.message4,.message5{
+				width: 13px;
+				height: 13px;
+				margin: 20px auto;
+				display: inline-block;
+				background-image: url(img/mess.png);
+			}
+			.wrong {
+				width: 13px;
+				height: 13px;
+				display: inline-block;
+				background-color: red;
+				margin: 20px auto;
+				background-image: url(img/wrong.png);
+			}
+			.correct {
+				width: 13px;
+				height: 13px;
+				display: inline-block;
+				margin: 20px auto;
+				background-color: white;
+				background-image: url(img/right.png)
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/飞机.png">
+		<div class="box">
+			<h1>注册</h1>
+			<hr />
+			<form>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+						
+				</thead>
+				<tbody>
+					<tr>
+						<td>用户名:</td>
+						<td><input type="text" name="username" id="username"></td>
+						<td class="message1"></td>
+						<td><span id="usermsg">请输入用户名</span></td>
+					</tr>
+					<tr>
+						<td>密码:</td>
+						<td><input type="password" name="password" id="passwd"></td>
+					<td class="message2"></td>
+					
+					<td><span id="passwordmsg">请输入6~16位密码</span></td>
+					<td class="pw"></td>
+					</tr>
+					<tr>
+						<td>手机号:</td>
+						<td><input type="text" name="tel" id="tel"></td>
+						<td class="message3"></td>
+						<td><span id="telmsg">请输入手机号码</span></td>
+						
+					</tr>
+					<tr>
+						<td>邮箱:</td>
+						<td><input type="email" name="eamil" id="email"></td>
+						<td class="message4"></td>
+						<td><span id="emailmsg">请输入您的邮箱</span></td>
+					</tr>
+					<tr>
+						<td>年龄:</td>
+						<td><input type="text" name="year" id="year"></td>
+						<td class="message5"></td>
+						<td><span id="yearmsg">请输入您的年龄</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit"  class="tbn1"/>
+			</form>
+		</div>
+		
+	</body>
+	<script>
+		 var img=document.querySelector("img");
+			 document.addEventListener('mousemove',function(e){
+        var x=e.pageX;
+        var y=e.pageY;
+        img.style.left=x-20+"px";
+        img.style.top=y-10+"px";
+    }) 
+     			//获取input控件
+			 var username=document.getElementById('username');
+			  var passwd=document.getElementById('passwd');
+			  var email=document.getElementById('email');
+			   var tel=document.getElementById('tel');
+			    var year=document.getElementById('year');
+			    //获取按钮
+			    
+			    var btn=document.querySelector('.tbn1');
+			    //获取提醒图片栏
+			     var userimg=document.querySelector('.message1');
+			    var passwordimg=document.querySelector('.message2');
+			    var telimg=document.querySelector('.message3');
+			    var emailimg=document.querySelector('.message4');
+			    var yearimg=document.querySelector('.message5');
+			    
+			    //获取密码可见按钮
+			    var passwdimg=document.querySelector('.pw');
+			    //获取提醒栏
+			    
+			    var usermsg=document.getElementById('usermsg');
+			    var passwordmsg=document.getElementById('passwordmsg');
+			    var telmsg=document.getElementById('telmsg');
+			    var emailmsg=document.getElementById('emailmsg');
+			    var yearmsg=document.getElementById('yearmsg');
+			    
+			    //用户名验证
+			username.onblur=function(){
+				var user= /^[a-zA-Z]\w{0,9}$/;
+				var value=username.value;
+				var msg='';
+				
+				
+				if(user.test(value)){
+				 msg='用户名可用';
+				 usermsg.innerHTML=msg;
+				 userimg.className='correct ';
+			    usermsg.style.color='deepskyblue';
+				 
+				}
+				else{
+				 msg='用户名不可用';
+				 usermsg.innerHTML=msg;
+				 userimg.className='wrong';
+				usermsg.style.color='red';
+				}
+			
+				}
+			//密码格式验证
+			passwd.onblur=function(){
+				var mima= /^.{6,16}$/;
+				var value=passwd.value;
+				var msg='';
+				
+				
+				if(mima.test(value)){
+					console.log('可用');
+				 msg='密码可用';
+				 passwordmsg.innerHTML=msg;
+				 passwordimg.className='correct ';
+			    passwordmsg.style.color='deepskyblue';
+				 
+				}
+				else{
+				 msg='请输入6~16位密码';
+				 passwordmsg.innerHTML=msg;
+				 passwordimg.className='wrong';
+				passwordmsg.style.color='red';
+				}
+			
+				}
+			//密码可见
+			
+			
+			var flag=0;
+			passwdimg.onclick=function(){
+				if (flag==0) {
+					passwd.type='text';
+					passwdimg.style.backgroundImage='img/open.png';
+					flag=1;
+				} else {
+				passwd.type='password';
+				passwdimg.style.backgroundImage='img/close.png';
+				flag=0;
+				}
+			}
+			//验证手机号
+			
+			tel.onblur=function(){
+				var phone=/^1[3456789]\d{9}$/;
+				var value=tel.value;
+				var msg='';
+				if(phone.test(value)){
+					msg='您的手机号可用';
+					telmsg.innerHTML=msg;
+					telimg.className='correct';
+					telmsg.style.color='deepskyblue;'
+					
+				}
+				else{
+				 msg='请输入正确的手机号';
+				 telmsg.innerHTML=msg;
+				 telimg.className='wrong';
+				telmsg.style.color='red';
+				}
+			}
+			//验证邮箱
+			
+			email.onblur=function(){
+				var Email=/^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+				var value=email.value;
+				var msg='';
+				if(Email.test(value)){
+					msg='您的邮箱可用';
+					emailmsg.innerHTML=msg;
+					emailimg.className='correct';
+					emailmsg.style.color='deepskyblue;'
+					
+				}
+				else{
+				 msg='请输入正确的邮箱';
+				 emailmsg.innerHTML=msg;
+				 emailimg.className='wrong';
+				emailmsg.style.color='red';
+				}
+			}
+			//验证年龄
+			year.onblur=function(){
+				var Year=/^(([0-9]|[1-9][1-9]|1[0-7][0-9])(\\.[0-9]+)?|180)$/;
+				var value=year.value;
+				var msg='';
+				if(Year.test(value)){
+					msg='您的年龄格式正确';
+					yearmsg.innerHTML=msg;
+					yearimg.className='correct';
+					yearmsg.style.color='deepskyblue;'
+					
+				}
+				else{
+				 msg='请检查您的年龄是否正确';
+				 yearmsg.innerHTML=msg;
+				 yearimg.className='wrong';
+				yearmsg.style.color='red';
+				}
+			}
+		
+			    
+		</script>
+</html>

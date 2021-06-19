@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 400px;
+				
+				margin: 100px auto;
+				border-bottom: 1PX solid #ccc;
+				
+			}
+			.box input{
+				width: 370px;
+				height: 30px;
+				border: 0;
+				outline: none;
+				color: #999;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<lable for="">搜索</lable>
+			<input type="text" id="passwd" value="陈廷奇">
+			</div>
+			<script>
+		var text=document.querySelector('input');
+		text.onfocus=function(){
+			if(this.value ==='陈廷奇'){
+				this.value='';
+				
+			}
+			this.style.color='#333';
+		}
+			text.onblur=function(){
+				if( this.value===''){
+					this.value='陈廷奇';
+					
+				}
+				this.style.color='#999';
+			}
+		
+	</script>
+	</body>
+	
+	
+</html>

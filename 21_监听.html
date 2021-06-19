@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>传统事件</button>
+		<button>事件监听</button>
+	</body>
+	<script>
+		//传统事件
+		var btn=document.querySelectorAll('button');
+		btn[0].onclick=function(){
+			alert('我是传统事件方式，事件唯一性')
+			
+		}
+		
+		btn[0].onclick=function(){
+			alert('我是传统事件方式，事件唯一性测试事件唯一性')
+		}
+		//事件监听
+		btn[1]=addEventListener('click',function(){
+			alert('我是新的事件 事件监听方式1')
+		})
+		btn[1]=addEventListener('click',function(){
+			alert('我是新的事件 事件监听方式2')
+		})
+	</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				height: 940px;
+				margin: 0px auto;
+				border: skyblue solid 2px;
+				
+			}
+			.liuyan{
+				width: 260px;
+				height: 436px;
+				background:url(img/ly.jpg);
+				margin: 0px 400px auto;
+			}
+			.liuyan input{
+				border: 0px;
+				width: 200px;
+				height: 250px;
+				position: relative;
+				top: 150px;
+				left: 28px;
+				
+				background-color:rgba(255,255,255,0.1);;
+				
+			}
+			.liuyan button{
+				width: 100px;
+				height: 50px;
+				position: relative;
+				top: 80px;
+				right:-80px;
+				background-color:rgba(255,255,0,0.3);
+				border-radius: 10px;
+			}
+			ul li{
+				position: relative;
+				top: 30px;
+				/*left: -15px;*/
+				list-style: url(img/li.png);
+			}
+			.lan{
+				width: 960px;
+				height: 450px;
+				background-color: white;
+				margin: 30px auto;
+				border: #00BFFF solid 2px;
+			}
+			a{
+				float: right;
+				
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="box">
+			<div class="liuyan">
+				<input type="text"/>
+				<button>留言</button>
+			</div>
+			<div class="lan">
+				
+				<ul></ul>
+			</div>
+			
+		</section>
+		<script>
+			var btn=document.querySelector('button');
+			var text=document.querySelector('input');
+			var ul=document.querySelector('ul');
+			btn.onclick=function(){
+				if (text.value=='') {
+				alert("您没有输入内容，请重新输入");
+				return false;
+				
+			} else{
+//				console.log(text.value);
+//创建元素
+			var li=document.createElement('li');
+			li.innerHTML=text.value+"<a href='#'>删除</a>";
+			ul.insertBefore(li,ul.children[0]);
+			var dele=document.querySelectorAll('a');
+			for ( var i=0;i<dele.length;i++){
+				dele[i].onclick=function(){
+					ul.removeChild(this.parentNode);
+				}
+			}
+}
+			}
+			//删除留言
+		
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+			}
+			.box li{
+				width: 30px;
+				height: 30px;
+				list-style: none;
+				position:relative;
+				left: -30px;
+				top: -170px;
+			
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<img src="img/tao.png">
+			<li id="colse_btn">×</li>
+		</div>
+		<script>
+			var img=document.querySelector('img');
+			var btn=document.getElementById('colse_btn');
+			btn.onclick=function(){
+				img.style.display='none';
+			}
+		</script>
+	</body>
+</html>

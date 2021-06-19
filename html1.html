@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			
+		</title>
+		<style>
+			header ,section,footer{
+				width: 1000px;
+				border: thin solid red;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			header:after{
+				content: '';
+				clear: both;
+				display: block;
+			}
+			section:after{
+				content: '';
+				clear: both;
+				display: block;
+			}
+			header h1{
+				float: left;
+			}
+			header p{
+				float: right;
+				margin-top: 45px;
+			}
+			section .a1:after{
+				content: '';
+				clear: both;
+				display: block;
+			}
+			section .a1{
+				display: inline-block;
+				
+				float: left;
+			}
+			ul {
+				
+				list-style: none;
+				margin-left:40px;
+				/*border: thin solid red;*/
+				width: 250px;
+			}
+			section form{
+				
+				display: inline-block;
+				border: thin solid red; 
+				float:right;
+				margin-right: 50px;
+			}
+			.a2{
+				margin: 0 auto;
+				/*border: thin solid red;*/
+				width: 150px;
+			}
+			.a3{
+				margin: 0 auto;
+				width: 100px;
+			}
+			.a4{
+				float: right;
+				margin-top: 20px;
+				margin-right: 20px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<h2>201702250215郭智塱</h2>
+		<header>
+			<h1><a href="#"><img src="img/163logo.gif"/></a></h1>
+			<p>
+				<span><a href="#">免费邮</a></span>
+				<span><a href="#">企业邮</a></span>
+				<span><a href="#">VIP邮箱</a></span>
+				<input type="color" id='aaa'/>
+			</p>
+		</header>
+		<section>
+			<div class='a1'>
+				<img src="img/imap.jpg"/>
+				<ul>
+					<li>ashfwej bwKRJHTF</li>
+					<li>ashfwej bwKRJHTF</li>
+					<li>ashfwej bwKRJHTF</li>
+				</ul>
+			</div>
+			<form action="#"method="get">
+				<img src="img/loginIcon.gif"/>普通登录<br/><br/>
+				用户名：<input type="text" />@163.com<br/><br/>
+				密    码：<input type="text" /><br/><br/>
+				版    本：<select name=""value="默认">
+					<option value="默认">默认</option>
+				</select><br/><br/><br/>
+				<div class='a2'>
+				<input type="radio" value='自动登录'/>自动登录
+				<input type="radio" value='SSL'checked="checked"/>SSL
+				</div><br/><br/>
+				<div class="a3">
+					<button>登录</button>
+					<button>注册</button>
+				</div>
+			</form>
+		</section>
+		<footer>
+			<img src="img/netease_logo.gif"/>
+			<div class="a4">
+			<a href="#">关于网易</a>
+			<a href="#">关于网易</a>
+			<a href="#">关于网易</a>
+			<a href="#">关于网易</a>
+			<a href="#">关于网易</a>
+			<a href="#">关于网易</a>
+			<a href="#">关于网易</a>
+			</div>
+		</footer>
+	</body>
+	<script>
+		
+		var a1=document.getElementById('aaa');
+		console.log(a1);
+		a1.onchange=function(){
+			
+			document.body.style.backgroundColor=this.value;
+			console.log(this.value);
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{height:500px;
+			width: 700px;
+			background-color: lightsteelblue;
+			margin: 0 auto;}
+			button{
+				position: relative;
+				left:300px;
+				top: 200px;
+			}
+			#time{
+				position: relative;
+				left:300px;
+				top: 230px;
+				font-size: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<article class="box">
+		<button>获取时间</button>
+		<div id="time">时间：</div>
+		</article>
+		<script>
+			var btn=document.querySelector('button');
+			var div=document.getElementById('time');
+			function gettime(){
+				var date=new Date();
+				var year=date.getFullYear();
+				var month=date.getMonth()+1;
+				var dates=date.getDate();
+				var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+				var day=date.getDay();
+				return'今天是：'+year+'年'+month+'月'+dates+'日'+arr[day]
+			}
+		btn.onclick=function(){
+			div.innerText=gettime();
+		}
+		</script>
+	</body>
+</html>

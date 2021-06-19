@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				height: 780px;
+				border: 1px solid royalblue;
+				margin: 1px auto;
+				text-align: center;
+			}
+			.list-input{
+				 line-height: 35px;
+            height: 35px;
+            width: 350px;
+            border: #ebebeb 1px solid;
+            text-indent: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<input  type="text" id="text" class="list-input"/>
+			<input type="checkbox"  id="check" />记住用户名
+		</div>
+	</body>
+	<script>
+	var username=document.querySelector('#text');
+	var check=document.querySelector('#check');
+		if (localStorage.getItem('username')) {
+			username.value=localStorage.getItem('username');
+			check.checked=true;
+		} 
+		check.addEventListener('change',function(){
+			if (this.checked) {
+			  localStorage.setItem('username', username.value)
+		} else{
+			localStorage.removeItem('username');
+		}
+		})
+		
+	</script>
+</html>

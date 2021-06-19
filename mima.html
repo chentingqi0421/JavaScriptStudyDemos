@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 400px;
+				
+				margin: 100px auto;
+				border-bottom: 1PX solid #ccc;
+				
+			}
+			.box input{
+				width: 370px;
+				height: 30px;
+				border: 0;
+				outline: none;
+			}
+			img{
+				width: 25px;
+				position: relative;
+				right: 2px;
+				top: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<lable for="">密码</lable>
+			<input type="password" id="passwd" name="">
+			<img src="img/open.png" id="eye">
+		</div>
+		<script>
+			
+			var eye=document.getElementById('eye');
+			var passwd=document.getElementById('passwd')
+			var flag=0;
+			eye.onclick=function(){
+				if (flag==0) {
+					passwd.type='text';
+					eye.src='img/open.png';
+					flag=1;
+				} else {
+				passwd.type='password';
+				eye.src='img/close.png';
+				flag=0;
+				}
+			}
+		</script>
+	</body>
+</html>

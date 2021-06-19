@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				margin: 0 auto;
+			}
+			table{
+				width: 800px;
+				margin: 100px auto;
+				background-color: white;
+				font-size: 14px;
+				border: 2px;
+			}
+			table thead{
+				background-color: deepskyblue;
+			}
+			table td{
+				color: deepskyblue;
+				text-align: center;
+				font-size: 10px;
+				height: 20px;
+				border-bottom: 1px solid;
+			}
+			.bg{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<table>
+			<thead>
+				<tr>
+				<th>代码</th>
+				<th>名称</th>
+				<th>最新公布净值</th>
+				<th>累计净值</th>
+				<th>前单位净值</th>
+				<th>净值增长率</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>003526</td>
+					<td>农银金穗3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金穗3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金穗3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金穗3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金穗3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+				<tr>
+					<td>003526</td>
+					<td>农银金穗3个月定期开放债券</td>
+					<td>1.075</td>
+					<td>1.079</td>
+					<td>1.074</td>
+					<td>+0.047%</td>
+				</tr>
+			</tbody>
+			
+		</table>
+		<script>
+			var bg=document.querySelector('tbody').querySelectorAll('tr');
+			for(var i=0;i<bg.length;i++){
+				bg[i].onmouseover=function(){
+					this.className='bg';
+				}
+				bg[i].onmouseout=function(){
+					this.className='';
+				}
+			}
+		</script>
+		</div>
+	</body>
+</html>

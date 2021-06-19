@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<button>跳转</button>
+	</body>
+	<script>
+		var btn=document.querySelector('button');
+		var div=document.querySelector('div');
+		
+		var time=5;
+		
+			btn.addEventListener('click',function(){
+				setInterval(function(){
+					if (time==0) {
+			location.href='/jsxuexi/换肤.html?__hbt=1601291198585';
+		} else{
+			div.innerHTML='页面将在'+time+'后跳转';
+			time--;
+		}
+		},1000)
+				
+			})
+			
+		
+	</script>
+</html>

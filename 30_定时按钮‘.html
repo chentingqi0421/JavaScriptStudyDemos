@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>发送</button>
+	</body>
+	<script>
+		var btn=document.querySelector('button');
+		var time=10;
+		
+		btn.addEventListener('click',function(){
+			btn.disabled=true;
+			var timer=setInterval(function(){
+				if(time==0){
+					clearInterval(timer);
+					btn.innerHTML='发送';
+					btn.disabled=false;
+					time=10;
+				}
+				else{
+					btn.innerHTML='请'+time+'秒后再试';
+				time--;
+				}
+			},1000)
+		})
+	</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				height: 940px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"><input type="text"/></div>
+		<script>
+			var input=document.querySelector('input');
+			document.addEventListener('keyup',function(e){
+//				console.log(e.keyCode);
+			if(e.keyCode===83){
+				input.focus();
+			}
+
+			})
+		</script>
+	</body>
+</html>

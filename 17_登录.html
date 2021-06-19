@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				height: 600px;
+				background-color: skyblue;
+				margin: 0 auto;
+			}
+			table{
+				margin: 0 auto;
+				background: white;
+				
+				width: 400px;
+			}
+			
+			.message {
+				display: inline-block;
+				background-color: white;
+				width: 15px;
+				height: 15px;
+				background-image: url(img/mess.png);
+			}
+			.message2{
+				width: 15px;
+				height: 15px;
+				display: inline-block;
+				background-color: white;
+				background-image: url(img/mess.png);
+			}
+			.wrong {
+				width: 15px;
+				height: 15px;
+				display: inline-block;
+				background-color: red;
+				background-image: url(img/wrong.png);
+			}
+			.correct {
+				width: 15px;
+				height: 15px;
+				display: inline-block;
+				background-color: white;
+				background-image: url(img/right.png)
+			}
+			a:hover{
+				color: red;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<form action="31_传参.html">
+				<!--传参到参数页面-->
+				<table border="1px">
+				<tr>
+					<td ><label>用户名</label></td>
+					<td><input type="text" id="username" name="username"></td>
+					<td><p  class="message" id="message" name="password"></p></td>
+					<td ><p  id="usernamemsg" class="usernamemsg">请输入用户名</p></td>
+				</tr>
+				<tr>
+					<td ><label>密码</label></td>
+					<td><input type="password" id="password"></td>
+					<td><p id="message2" class="message2"></p></td>
+					<td colspan="5"><span id="passwordmsg" class="passwordmsg">请输入密码<span></td>
+				</tr>
+			</table>
+			<input type="submit" value="登录">
+		</div></form>
+			
+		<script>
+			var username=document.getElementById('username');
+			var passwd=document.getElementById('password');
+			var img1=document.getElementById('message');
+			var img2=document.getElementById('message2');
+			var usernamemsg=document.getElementById('usernamemsg');
+			var passwordmsg=document.getElementById('passwordmsg');
+			//用户名验证
+			username.onblur=function(){
+				var geshi= /^[a-zA-Z]\w{0,9}$/;
+				var value=username.value;
+				var msg='';
+				
+				
+				if(geshi.test(value)){
+				 msg='用户名可用';
+				 usernamemsg.innerText=msg;
+				 img1.className='correct ';
+			    usernamemsg.style.color='deepskyblue';
+				 
+				}
+				else{
+				 msg='用户名不可用';
+				 usernamemsg.innerText=msg;
+				 img1.className='wrong';
+				usernamemsg.style.color='red';
+				}
+			
+				}
+			//密码格式验证
+			passwd.onblur=function(){
+				var mima= /^.{6,16}$/;
+				var value=passwd.value;
+				var msg='';
+				
+				
+				if(mima.test(value)){
+					console.log('可用');
+				 msg='密码可用';
+				 passwordmsg.innerText=msg;
+				 img2.className='correct ';
+			    passwordmsg.style.color='deepskyblue';
+				 
+				}
+				else{
+				 msg='请输入6~19位密码';
+				 passwordmsg.innerText=msg;
+				 img2.className='wrong';
+				passwordmsg.style.color='red';
+				}
+			
+				}
+			
+		</script>
+		
+	</body>
+</html>

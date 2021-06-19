@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				margin: 100px auto;
+				width :979px;
+				
+				
+			}
+			ul li{
+				list-style: none;
+			}
+			.box_list .li1{
+				background-color: red;
+				color: #FFFFFF;
+			}
+			.box_list{
+				border: 1px solid #999999;
+				height: 60px;
+				 background-color: #f1f1f1;
+			}
+			.box li{
+				float: left;
+				height: 39px;
+				line-height: 39px;
+				padding: 0 20px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.box_con.box_item{
+				padding-top: 10px auto;
+				float: left;
+			}
+			.box_item{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box_list">
+				<ul>
+					<li class="li1">商品介绍</li>
+					<li>手机社区</li>
+					<li>规格预包装</li>
+					<li>售后保障</li>
+					<li>商品评论（5000）</li>
+				</ul>
+			</div>
+			<div class="box_con">
+				<div class="box_item" style="display: block">商品介绍页面</div>
+				<div class="box_item">手机社区页面</div>
+				<div class="box_item"> 规格与包装页面</div>
+				<div class="box_item"> 售后保障页面</div>
+				<div class="box_item"> 商品评论页面</div>
+			</div>
+		</div>
+	<script>
+        // 获取元素
+        var tab_list = document.querySelector('.box_list');
+        var lis = tab_list.querySelectorAll('li');
+        var items = document.querySelectorAll('.box_item');
+        // for循环绑定点击事件
+        for (var i = 0; i < lis.length; i++) {
+            // 开始给5个小li 设置索引号 
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function() {
+                // 1. 上的模块选项卡，点击某一个，当前这一个底色会是红色，其余不变（排他思想） 修改类名的方式
+
+                // 干掉所有人 其余的li清除 class 这个类
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                // 留下我自己 
+                this.className = 'li1';
+                // 2. 下面的显示内容模块
+                var index = this.getAttribute('index');
+                console.log(index);
+                // 干掉所有人 让其余的item 这些div 隐藏
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                // 留下我自己 让对应的item 显示出来
+                consol.log(items[index]);
+                items[index].style.display = 'block';
+               
+            }
+        }
+    </script>
+	</body>
+</html>

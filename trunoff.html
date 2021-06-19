@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关灯</title>
+		<style>
+			body{
+				background-color: #000000;
+			}
+			img{
+				position: relative;
+				left: 820px;
+				top: 200px;
+			}
+			.kaiguanbox{
+				width: 400px;
+				height: 300px;
+				position: relative;
+				left: 700px;
+				top: 300px;
+				background-color: darkgray;
+			}
+			#left{
+				width: 180px;
+				height: 260px;
+				position: absolute;
+				left:10px;
+				top: 20px;
+				border-top-left-radius: 4px;
+				box-shadow:#000000 2px 2px 15px;
+				font-size: 20px;
+			}
+			#right{
+				width: 180px;
+				height: 260px;
+				position: absolute;
+				right:10px;
+				top: 20px;
+				border-top-left-radius: 4px;
+				box-shadow:#000000 2px 2px 15px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body >
+		<img src="img/off.png">
+		<div class="kaiguanbox">
+			
+			<button id="left">关灯</button>
+			<button id="right">开灯</button>
+			
+		</div>
+		<script>
+			var on=document.getElementById('right');
+			var off=document.getElementById('left');
+			var light=document.querySelector('img');
+		   on.onclick=function(){
+		   	light.src="img/on.png";
+		   		on.style.backgroundColor='gray';
+		   		off.style.backgroundColor='white';
+		   	
+		   }
+		   off.onclick=function(){
+		   	light.src="img/off.png";
+		   	off.style.backgroundColor='gray';
+		   	on.style.backgroundColor='white';
+		   	
+		   }
+		 
+		</script>
+	</body>
+</html>
